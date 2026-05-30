@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    padding: 30px;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 2px solid #f0f0f0;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+header p {
+    color: #888;
+    font-size: 1.1rem;
+}
+
+.menu-exercicios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.btn-ex {
+    width: 45px;
+    height: 45px;
+    border: 2px solid #667eea;
+    background: #fff;
+    color: #667eea;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-ex:hover {
+    background: #667eea;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.btn-ex.ativo {
+    background: #667eea;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.exercicio {
+    background: #f8f9ff;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 10px;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.exercicio h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.exercicio p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.exercicio label {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: 500;
+    color: #555;
+}
+
+.exercicio input[type="number"],
+.exercicio select {
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    margin-top: 5px;
+    background: #fff;
+}
+
+.exercicio input[type="number"]:focus,
+.exercicio select:focus {
+    border-color: #667eea;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+.notas-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.calc-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 10px;
+    align-items: end;
+}
+
+.btn-calcular {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+.btn-calcular:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.resultado {
+    margin-top: 20px;
+    padding: 20px;
+    background: #e8f5e9;
+    border-radius: 12px;
+    border-left: 4px solid #4caf50;
+    animation: fadeIn 0.4s ease;
+}
+
+.resultado h3 {
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+.resultado p {
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.resultado .erro {
+    background: #ffebee;
+    border-left-color: #f44336;
+    color: #c62828;
+}
+
+.aprovado {
+    color: #2e7d32;
+}
+
+.reprovado, .retido {
+    color: #c62828;
+}
+
+.exame {
+    color: #f57f17;
+}
+
+.par {
+    color: #2e7d32;
+}
+
+.impar {
+    color: #c62828;
+}
+
+.tabuada {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.tabuada td {
+    padding: 8px 15px;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 1.1rem;
+}
+
+.tabuada td:first-child {
+    text-align: right;
+    font-weight: bold;
+}
+
+.tabuada td:nth-child(2) {
+    text-align: center;
+    color: #888;
+}
+
+.tabuada td:last-child {
+    text-align: left;
+    font-weight: bold;
+    color: #667eea;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0 0;
+    color: #aaa;
+    font-size: 0.9rem;
+    border-top: 2px solid #f0f0f0;
+    margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+    .container { padding: 15px; }
+    .notas-grid { grid-template-columns: 1fr; }
+    .calc-grid { grid-template-columns: 1fr; }
+    header h1 { font-size: 1.5rem; }
+}
